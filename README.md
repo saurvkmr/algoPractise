@@ -1,1 +1,1 @@
-# -algoPractise
+# algoPractise
