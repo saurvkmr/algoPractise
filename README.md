@@ -1,1 +1,2 @@
-# algoPractise
+# codingPractise
+Coding Problems
