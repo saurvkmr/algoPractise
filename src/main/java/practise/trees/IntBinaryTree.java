@@ -3,13 +3,13 @@ package practise.trees;
 import java.util.Arrays;
 
 public class IntBinaryTree {
-    TreeNode root;
+    TreeNode root = new TreeNode();
 
     public void addNodeToBST(int... val) {
         Arrays.stream(val).forEach(value -> root.addRecursiveToBST(value, root));
     }
 
-    static class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
