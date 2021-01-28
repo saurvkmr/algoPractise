@@ -2,7 +2,7 @@ package practise.trees
 
 fun validateIntBinaryTree() {
     val tree = IntBinaryTree()
-    tree.addNodeToBST(5, 6, 4, 7, 8, 2, 9, 3, 1)
+    tree.addNodeToBST(5, 6, 3, 8, 7, 2, 9, 4, 1)
     inOrderTraversal(tree.root)
     println()
     preOrderTraversal(tree.root)

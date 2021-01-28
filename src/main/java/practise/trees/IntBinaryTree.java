@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class IntBinaryTree {
     TreeNode root = new TreeNode();
 
+    public IntBinaryTree() {}
+
+    public IntBinaryTree(int... val) {addNodeToBST(val);}
+
     public void addNodeToBST(int... val) {
         Arrays.stream(val).forEach(value -> root.addRecursiveToBST(value, root));
     }
@@ -22,7 +26,7 @@ public class IntBinaryTree {
         }
 
         private void addRecursiveToBST(int val, TreeNode root) {
-            if (root == null) {
+            if (root == null || root.val == 0) {
                 root.val = val;
                 return;
             }
