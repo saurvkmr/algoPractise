@@ -1,7 +1,5 @@
 package practise.arrays
 
-import java.util.*
-
 /*
 Given a array of integers find the index which  partitions the array to two with high numbers and low numbers.
 For example [5, -1, 3, 8,6] the index 3 will partition the array to [5,-1,3] and [8,6]

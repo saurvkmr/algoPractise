@@ -2,21 +2,19 @@ package practise.string
 
 // aaabbbcccdddddeeeeef -> a3b3c3d4e5f1
 
-fun main() {
-    println("aaabbbcccdddddeeeeef".runLengthEncoding())
-}
+fun main() = println("aaabbbcccdddddeeeeefa".runLengthEncoding())
 
-inline fun String.runLengthEncoding():String {
+fun String.runLengthEncoding(): String {
     val output = StringBuilder()
     var count = 0
     var c: Char = this[0]
     for (i in this) {
-        if (i == c) {
-            count++
-        } else {
+        if (i != c) {
             output.append("$c$count")
             c = i
             count = 1
+        } else {
+            count++
         }
     }
     if (count > 0) {
