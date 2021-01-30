@@ -18,12 +18,11 @@ private fun countValleys(hike: String): Int {
     var valleyCount = 0
     for (i in hike) {
         prevAltitude = altitude
-        if (i == 'U') {
-            altitude++
-        } else if (i == 'D') {
-            altitude--
+        when (i) {
+            'U' -> altitude++
+            'D' -> altitude--
         }
-        if (prevAltitude >= 0 && altitude < 0) {
+        if (prevAltitude == 0 && altitude < 0) {
             valleyCount++
         }
     }
