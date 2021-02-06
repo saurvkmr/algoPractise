@@ -29,8 +29,6 @@ public class LatestTime {
         }
 
         return new String(c);
-
-
     }
 
     private static String latestTime(String time) {
