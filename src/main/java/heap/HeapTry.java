@@ -1,7 +1,5 @@
 package heap;
 
-import com.apple.concurrent.Dispatch;
-
 import java.util.PriorityQueue;
 
 public class HeapTry {
