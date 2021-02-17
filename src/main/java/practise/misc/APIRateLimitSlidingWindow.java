@@ -13,14 +13,14 @@ public class APIRateLimitSlidingWindow {
         Random randomSleep = new Random();
         for (int i = 0; i < 10; i++) {
             Thread.sleep(randomSleep.nextInt(2000));
-            if (!rateLimiter("saurav")) {
+            if (!rateLimiterFixedWindow("saurav")) {
                 System.out.println("429 " + i);
                 break;
             }
         }
     }
 
-    private static boolean rateLimiter(String name) {
+    private synchronized static boolean rateLimiterFixedWindow(String name) {
         ReqCount reqCount = rateLimiterMap.getOrDefault(name, null);
         if (reqCount == null)
             rateLimiterMap.put(name, new ReqCount(1));
