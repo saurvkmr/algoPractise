@@ -10,8 +10,12 @@ public class ProducerConsumer {
 
     public static void main(String[] args) {
         ExecutorService ex = Executors.newFixedThreadPool(2);
-        ex.submit(new Producer());
         ex.submit(new Consumer());
+        try{
+            Thread.sleep(1000);
+        }catch (Exception e) {}
+        ex.submit(new Producer());
+        ex.shutdown();
     }
 
     private static class Producer implements Runnable {
@@ -21,7 +25,7 @@ public class ProducerConsumer {
             synchronized (shared) {
                 while(shared.size() > 1) {
                     try {
-                        System.out.println("Waiting");
+                        System.out.println("Producer Waiting");
                         shared.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -41,7 +45,7 @@ public class ProducerConsumer {
             synchronized (shared) {
                 while(shared.size() == 0) {
                     try {
-                        System.out.println("Waiting");
+                        System.out.println("Consumer Waiting");
                         shared.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
