@@ -9,6 +9,7 @@ public class PriorityQueueTest {
         Queue q = new PriorityQueue();
         q.add("a");
         q.add("A");
+        q.add("AZ");
         q.add("Ab");
         q.add("Ac");
         q.add("bc");
