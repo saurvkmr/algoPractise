@@ -1,5 +1,6 @@
 package practise.string;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -42,11 +43,6 @@ public class ValidAnagram {
         for (char c : t.toCharArray()) {
             map[c]--;
         }
-        for (int i : map) {
-            if (i != 0) {
-                return false;
-            }
-        }
-        return true;
+        return Arrays.stream(map).max().getAsInt() == 0;
     }
 }

@@ -14,8 +14,8 @@ public class ServeIceCream {
         iceCreamCost = 5;
     }
 
-    public boolean ableToServe(int[] money) {
-        for (int amount : money) {
+    public boolean ableToServe(int[] bills) {
+        for (int amount : bills) {
             if (amount == iceCreamCost) {
                 int count = denominationCount.getOrDefault(amount, 0);
                 denominationCount.put(amount, ++count);
