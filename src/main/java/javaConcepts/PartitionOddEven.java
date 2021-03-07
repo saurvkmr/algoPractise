@@ -3,6 +3,7 @@ package javaConcepts;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class PartitionOddEven {
@@ -13,13 +14,14 @@ public class PartitionOddEven {
     }
 
     private static void createPartition(final List<Integer> nums) {
+        Predicate<Integer> isEven = e -> e % 2 == 0;
         Map<Boolean, List<Integer>> collect = nums.stream()
-                .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+                .collect(Collectors.partitioningBy(isEven));
         System.out.println(collect.get(Boolean.TRUE));
         System.out.println(collect.get(Boolean.FALSE));
 
         Map<Boolean, Double> collect2 = nums.stream()
-                .collect(Collectors.partitioningBy(n -> n % 2 == 0,
+                .collect(Collectors.partitioningBy(isEven,
                         Collectors.averagingInt(Integer::intValue)));
         System.out.println(collect2.get(Boolean.TRUE));
         System.out.println(collect2.get(Boolean.FALSE));
