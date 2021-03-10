@@ -1,4 +1,4 @@
-package javaConcepts;
+package javaConcepts.threads;
 
 public class ThreadOneAfterAnother {
 
