@@ -8,10 +8,9 @@ public class GnomeSeq {
     }
 
     private static String getGnomeSeq(String[] seq) {
-        String prevSeq = seq[0], currSeq = null;
+        String prevSeq = seq[0];
         StringBuilder sb = new StringBuilder(prevSeq);
-        for (int i = 1; i < seq.length; i++) {
-            currSeq = seq[i];
+        for (String currSeq : seq) {
             sb.append(partOfSeqNotPresent(prevSeq, currSeq));
             prevSeq = currSeq;
         }
@@ -25,6 +24,6 @@ public class GnomeSeq {
                 right--;
             break;
         }
-        return curSeq.substring(right, curSeq.length());
+        return curSeq.substring(right);
     }
 }
