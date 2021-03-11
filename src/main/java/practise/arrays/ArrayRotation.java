@@ -1,8 +1,10 @@
 package practise.arrays;
 
+import java.util.Arrays;
+
 public class ArrayRotation {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         rotateArray(arr, 12);
     }
 
@@ -10,9 +12,9 @@ public class ArrayRotation {
         int len = arr.length;
         int[] rotatedArray = new int[len];
         k = k % len;
-        for (int i = 0; i< len; i++) {
+        for (int i = 0; i < len; i++) {
             int pos = i + k;
-            if (pos > len -1 ) {
+            if (pos > len - 1) {
                 pos = pos % len;
             }
             rotatedArray[pos] = arr[i];
@@ -22,8 +24,7 @@ public class ArrayRotation {
     }
 
     static void print(int[] arr) {
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
+        Arrays.stream(arr)
+                .forEach(e -> System.out.print(e + " "));
     }
 }
